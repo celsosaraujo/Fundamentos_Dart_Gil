@@ -1,15 +1,15 @@
 import 'dart:io';
 
 void main() {
-  print('Digite a segunda nota');
+  print('Digite o Código do Produto');
   String codigo = stdin.readLineSync()!;
   // String caracterer
 
-  print('Digite a segunda nota');
+  print('Digite o Preço Unitário');
   double precoUni = double.parse(stdin.readLineSync()!);
   // preço quebrado
 
-  print('Digite a terceira nota');
+  print('Digite a quantidade em estoque');
   int quanEstoque = int.parse(stdin.readLineSync()!);
   // preço único
 
@@ -32,8 +32,7 @@ void main() {
       totalItensVendidos += quantidadeVendida;
       totalValorVendas += valorVenda;
       numeroVenda++;
-      print(
-          "Venda $numeroVenda do produto $codigo = R\$ ${valorVenda.toStringAsFixed(2)} realizada com sucesso!");
+      print("Venda $numeroVenda do produto $codigo = R\$ ${valorVenda.toStringAsFixed(2)} realizada com sucesso!");
     } else {
       print(
           "Estoque insuficiente para o produto $codigo! A quantidade disponível em estoque é: $quanEstoque");

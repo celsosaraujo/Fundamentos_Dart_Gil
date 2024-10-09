@@ -15,7 +15,9 @@ void main() {
   //1º Imprima os dados dos pacientes na tela
   print('\n// 1º - Pacientes');
   for (var paciente in pacientes) {
-    print(paciente);
+    final dadosPaciente = paciente.split("|");
+    print(
+        "Nome: ${dadosPaciente[0]} Idade: ${dadosPaciente[1]} Profissão: ${dadosPaciente[2]} UF: ${dadosPaciente[3]}");
   }
 
   //2º Imprima os pacientes acima de 20 anos
@@ -51,21 +53,23 @@ void main() {
     } else if (profissao == 'jornalista') {
       jornalistas++;
     }
-
-    print('- Quantidade de Desenvolvedore(s): $desenvolvedores');
-    print('- Quantidade de Estudante(s): $estudantes');
-    print('- Quantidade de Dentista(s): $dentistas');
-    print('- Quantidade de Jornalista(s): $jornalistas');
   }
-  // 4º Imprima os pacientes por profissão.
+  print('- Quantidade de Desenvolvedore(s): $desenvolvedores');
+  print('- Quantidade de Estudante(s): $estudantes');
+  print('- Quantidade de Dentista(s): $dentistas');
+  print('- Quantidade de Jornalista(s): $jornalistas');
+
+  // 4º Imprima os pacientes por UF.
   // Deve ser impresso apenas Nome, idade e profissão.
   print('\N// 4º - Pacientes que moram em SP');
   for (var paciente in pacientes) {
     var dados = paciente.split('|');
-    var nome = dados[0];
-    var idade = dados[1];
-    var profissao = dados[2];
-    print('Nome: $nome, Idade: $idade, Profissão: $profissao');
+    if (dados[3].toUpperCase() == 'SP') {
+      var nome = dados[0];
+      var idade = dados[1];
+      var profissao = dados[2];
+      print('Nome: $nome, Idade: $idade, Profissão: $profissao');
+    }
   }
 
   // 5º Exclua todos os estudantes e em seguida imprima os pacientes
